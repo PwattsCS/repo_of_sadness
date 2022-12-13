@@ -1,4 +1,9 @@
 # Repository of Sadness
+
+# Disclaimer!!!
+
+Please do not run these files on any system that is not being used as part of an NGAV (Next Generation Anti Virus) EDR (Endpoint Detection and Response) XDR (Extended Detection and Response). This is purely for demonstrational and educational purposes.
+
 This repo is build to house testing samples that can be used for assessing EDR/XDR tools effectiveness.
 
 It is devided up into the following catergories:
