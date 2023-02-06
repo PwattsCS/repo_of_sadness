@@ -8,18 +8,23 @@ terraform {
 }
 
 provider "docker" {
-  # Configuration options
 }
+
 # Create a docker image resource
 # -> docker pull nginx:latest
-resource "docker_image" "ubuntu" {
-  name         = "ubuntu:latest"
+resource "docker_image" "nginx" {
+  name         = "nginx:latest"
   keep_locally = true
 }
 
 # Create a docker container resource
 # -> same as 'docker run --name nginx -p8080:80 -d nginx:latest'
-resource "docker_container" "ubuntu" {
-  name    = "ubuntu"
-  image   = docker_image.ubuntu.image_id
+resource "docker_container" "nginx" {
+  name    = "nginx"
+  image   = docker_image.nginx.image_id
+
+  ports {
+    external = 8080
+    internal = 80
+  }
 }
